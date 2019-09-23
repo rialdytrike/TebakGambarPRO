@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Mon Mar 18 23:28:18 ICT 2019
+0.baseType=DIRECTORY
+0.base=D\:\\AndroidProject\\TebakGambar1\\app\\build\\intermediates\\merged_assets\\debug\\mergeDebugAssets\\out
+0.path=fonts/kronika.ttf
+0.set=ASSET
+count=1

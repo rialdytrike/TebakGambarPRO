@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.trikersdev.tebakgambarpro"
+    android:versionCode="5"
+    android:versionName="1.5" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="28" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Create a unique permission for your app and use it so only your app can receive your OneSignal messages. -->
+    <permission
+        android:name="com.trikersdev.tebakgambarpro.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.trikersdev.tebakgambarpro.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> <!-- Required, makes sure notifications are delivered on time. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--
+ Required so the device vibrates on receiving a push notification.
+         Vibration settings of the device still apply.
+    -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--
+ Use to restore notifications the user hasn't interacted with.
+         They could be missed notifications if the user reboots their device if this isn't in place.
+    -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- START: ShortcutBadger -->
+    <!-- Samsung -->
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" /> <!-- HTC -->
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" /> <!-- Sony -->
+    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" /> <!-- Apex -->
+    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" /> <!-- Solid -->
+    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" /> <!-- Huawei -->
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" /> <!-- ZUK -->
+    <uses-permission android:name="android.permission.READ_APP_BADGE" /> <!-- OPPO -->
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" /> <!-- EvMe -->
+    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
+    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="applovin.sdk.key"
+            android:value="KRfOTA72fBSwGA9AaaVlVgC86t4MQLpmnT8FdGIHRlCiwLtUxNEQ2QT9IcVizISlmb_OtHgI0t_wCtP8FdTH35" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-9869661954104916~4620894141" />
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal1Activity"
+            android:label="@string/title_activity_soal1" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal2Activity"
+            android:label="@string/title_activity_soal2" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal3Activity"
+            android:label="@string/title_activity_soal3" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.EndActivity"
+            android:label="@string/title_activity_end" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal4Activity"
+            android:label="@string/title_activity_soal4" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.LevelMenu"
+            android:label="@string/title_activity_level_menu" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.MenuLevel"
+            android:label="@string/title_activity_level_menu" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal5Activity"
+            android:label="@string/title_activity_soal5" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal6Activity"
+            android:label="@string/title_activity_soal6" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal7Activity"
+            android:label="@string/title_activity_soal7" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal8Activity"
+            android:label="@string/title_activity_soal8" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal9Activity"
+            android:label="@string/title_activity_soal9" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal10Activity"
+            android:label="@string/title_activity_soal10" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal11Activity"
+            android:label="@string/title_activity_soal11" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal12Activity"
+            android:label="@string/title_activity_soal12" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal13Activity"
+            android:label="@string/title_activity_soal13" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal14Activity"
+            android:label="@string/title_activity_soal14" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal15Activity"
+            android:label="@string/title_activity_soal15" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal16Activity"
+            android:label="@string/title_activity_soal16" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal17Activity"
+            android:label="@string/title_activity_soal17" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal18Activity"
+            android:label="@string/title_activity_soal18" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal19Activity"
+            android:label="@string/title_activity_soal19" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal20Activity"
+            android:label="@string/title_activity_soal20" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal21Activity"
+            android:label="@string/title_activity_soal21" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal22Activity"
+            android:label="@string/title_activity_soal22" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal23Activity"
+            android:label="@string/title_activity_soal23" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal24Activity"
+            android:label="@string/title_activity_soal24" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal25Activity"
+            android:label="@string/title_activity_soal25" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal26Activity"
+            android:label="@string/title_activity_soal26" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal27Activity"
+            android:label="@string/title_activity_soal27" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal28Activity"
+            android:label="@string/title_activity_soal28" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal29Activity"
+            android:label="@string/title_activity_soal29" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal30Activity"
+            android:label="@string/title_activity_soal30" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal31Activity"
+            android:label="@string/title_activity_soal31" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal32Activity"
+            android:label="@string/title_activity_soal32" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal33Activity"
+            android:label="@string/title_activity_soal33" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal34Activity"
+            android:label="@string/title_activity_soal34" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal35Activity"
+            android:label="@string/title_activity_soal35" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal36Activity"
+            android:label="@string/title_activity_soal36" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal37Activity"
+            android:label="@string/title_activity_soal37" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal38Activity"
+            android:label="@string/title_activity_soal38" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal39Activity"
+            android:label="@string/title_activity_soal39" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.level1.Soal40Activity"
+            android:label="@string/title_activity_soal40" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.MenuLevel2"
+            android:label="@string/title_activity_level_menu" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.SaranActivity"
+            android:label="@string/title_activity_saran" >
+        </activity>
+        <activity
+            android:name="com.trikersdev.tebakgambarpro.CaraMainActivity"
+            android:label="@string/title_activity_cara_main" >
+        </activity>
+
+        <meta-data
+            android:name="onesignal_app_id"
+            android:value="f8d51a35-6ae8-45d2-a848-436858d0a773" /> <!-- Deprecated - Pulled from OneSignal dashboard. -->
+        <meta-data
+            android:name="onesignal_google_project_number"
+            android:value="str:REMOTE" />
+
+        <receiver
+            android:name="com.onesignal.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+
+            <!-- High priority so OneSignal payloads can be filtered from other GCM receivers if filterOtherGCMReceivers is enabled. -->
+            <intent-filter android:priority="999" >
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.trikersdev.tebakgambarpro" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.onesignal.NotificationOpenedReceiver" />
+
+        <service android:name="com.onesignal.GcmIntentService" />
+        <service
+            android:name="com.onesignal.GcmIntentJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name="com.onesignal.RestoreJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name="com.onesignal.RestoreKickoffJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name="com.onesignal.SyncService"
+            android:stopWithTask="true" />
+        <service
+            android:name="com.onesignal.SyncJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity
+            android:name="com.onesignal.PermissionsActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <service android:name="com.onesignal.NotificationRestoreService" />
+
+        <receiver android:name="com.onesignal.BootUpReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.onesignal.UpgradeReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.applovin.adview.AppLovinInterstitialActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="com.applovin.impl.adview.AppLovinOrientationAwareInterstitialActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="behind" />
+        <activity
+            android:name="com.applovin.adview.AppLovinConfirmationActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name="com.applovin.sdk.AppLovinWebViewActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name="com.applovin.mediation.MaxDebuggerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" />
+        <!--
+             FirebaseMessagingService performs security checks at runtime,
+             no need for explicit permissions despite exported="true"
+        -->
+        <service
+            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+            android:exported="true" >
+            <intent-filter android:priority="-500" >
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <provider
+            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+            android:authorities="com.trikersdev.tebakgambarpro.mobileadsinitprovider"
+            android:exported="false"
+            android:initOrder="100" />
+
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:exported="false" >
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
+
+        <receiver
+            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
+        <!--
+             FirebaseInstanceIdService performs security checks at runtime,
+             no need for explicit permissions despite exported="true"
+        -->
+        <service
+            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
+            android:exported="true" >
+            <intent-filter android:priority="-500" >
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="com.trikersdev.tebakgambarpro.firebaseinitprovider"
+            android:exported="false"
+            android:initOrder="100" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>

@@ -1,0 +1,11 @@
+#Internal package file, do not edit.
+#Sun Mar 31 01:30:55 ICT 2019
+1.base=D\:\\AndroidProject\\TebakGambar1\\app\\build\\intermediates\\merged_assets\\release\\mergeReleaseAssets\\out
+0.baseType=DIRECTORY
+1.baseType=DIRECTORY
+count=2
+1.set=ASSET
+0.path=classes.dex
+0.set=DEX
+0.base=D\:\\AndroidProject\\TebakGambar1\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\out
+1.path=fonts/kronika.ttf
